@@ -1,0 +1,177 @@
+/* Estilos gerais da Navbar */
+.navbar {
+  background-color: #0056b3; /* Cor de fundo da Navbar */
+  padding: 15px 30px; /* Ajustando o espaço interno para uma altura mais elegante */
+  display: flex;
+  justify-content: space-between; /* Espaçamento entre logo e menu */
+  align-items: center; /* Alinha verticalmente os itens */
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+/* Logo da Navbar */
+.navbar-logo {
+  color: white; /* Cor branca para o logo */
+  font-size: 1.8rem; /* Aumentando o tamanho do logo */
+  font-weight: bold;
+  text-decoration: none;
+  display: flex; /* Para alinhar imagem e texto, se necessário */
+  align-items: center; /* Alinha verticalmente o conteúdo */
+}
+
+/* Estilos da imagem da logo */
+.navbar-logo img {
+  height: 70px; /* Ajuste a altura da logo conforme necessário */
+  margin-right: 10px; /* Espaço entre a imagem e o texto */
+}
+
+/* Lista de navegação */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* Aumentando o espaço entre os itens do menu */
+}
+
+/* Links de navegação */
+.navbar-menu li {
+  font-size: 1rem;
+  font-weight: bold;
+  position: relative; /* Para usar um pseudo-elemento para efeito de destaque */
+}
+
+.navbar-menu li a {
+  color: white; /* Cor branca para os links */
+  text-decoration: none;
+  padding: 10px 15px; /* Ajustando padding */
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: all 0.3s ease;
+}
+
+/* Efeito de destaque ao hover */
+.navbar-menu li a:hover {
+  background-color: #003d80; /* Azul escuro ao passar o mouse */
+  color: white; /* Mantém a cor do texto branca no hover */
+  transform: translateY(-2px); /* Leve elevação no hover */
+}
+
+/* Indicador para links ativos */
+.navbar-menu li a.active {
+  border-bottom: 3px solid #ffffff; /* Borda branca para links ativos */
+}
+
+/* Efeito de transição suave */
+.navbar-menu li a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px; /* Ajustando a posição do indicador */
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-menu li:hover a::after,
+.navbar-menu li a.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Estilos do menu hambúrguer */
+.menu-hamburguer {
+  display: none; /* Inicialmente oculto */
+  flex-direction: column;
+  cursor: pointer; /* Cursor de ponteiro */
+}
+
+.bar {
+  height: 3px; /* Altura das barras do hambúrguer */
+  width: 25px; /* Largura das barras do hambúrguer */
+  background-color: white; /* Cor das barras */
+  margin: 4px 0; /* Espaçamento entre as barras */
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px; /* Reduz o padding para menos espaço */
+    flex-direction: row; /* Coloca a logo e o menu em linha */
+    align-items: center; /* Alinha verticalmente os itens */
+  }
+
+  .navbar-menu {
+    display: none; /* Oculta o menu padrão */
+    flex-direction: column; /* Exibe os itens do menu em coluna */
+    gap: 15px; /* Reduz o espaço entre os itens do menu */
+    width: 100%; /* Faz o menu ocupar toda a largura */
+    max-height: 0; /* Inicia com altura 0 */
+    overflow: hidden; /* Oculta o conteúdo excedente */
+    transition: max-height 0.3s ease; /* Transição suave para a altura */
+  }
+
+  .navbar.active .navbar-menu {
+    display: flex; /* Mostra o menu quando a navbar estiver ativa */
+    max-height: 300px; /* Altura máxima ao expandir */
+  }
+
+  .menu-hamburguer {
+    display: flex; /* Mostra o menu hambúrguer */
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px; /* Reduz o padding da navbar */
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem; /* Reduz o tamanho do logo */
+  }
+
+  .navbar-menu li a {
+    padding: 8px 10px; /* Ajusta o padding dos links */
+    font-size: 0.9rem; /* Reduz o tamanho da fonte dos links */
+  }
+}
+
+
+
+/* Responsividade para telas até 820px */
+@media (max-width: 820px) {
+  .navbar {
+    padding: 10px 15px; /* Reduz o padding para menos espaço */
+    flex-direction: column; /* Coloca a logo e o menu em coluna */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+  }
+
+  .navbar-menu {
+    display: none; /* Oculta o menu inicialmente */
+    flex-direction: column; /* Exibe os itens do menu em coluna */
+    width: 100%; /* Faz o menu ocupar toda a largura */
+    padding: 10px 0; /* Adiciona padding vertical */
+    margin: 0; /* Remove margem padrão */
+  }
+
+  .navbar.active .navbar-menu {
+    display: flex; /* Mostra o menu quando a navbar estiver ativa */
+    
+  }
+ 
+  .menu-hamburguer {
+    display: flex; /* Mostra o menu hambúrguer */
+    position: relative;
+    margin-left: 700px;
+    width: 200px;
+  }
+
+  .navbar-menu li {
+    width: 100%; /* Faz os itens do menu ocuparem toda a largura */
+    text-align: center; /* Centraliza o texto dos itens */
+  }
+
+  .navbar-menu li a {
+    padding: 10px; /* Ajusta o padding dos links para menos espaço */
+    font-size: 0.9rem; /* Reduz o tamanho da fonte para compactar visualmente */
+  }
+}

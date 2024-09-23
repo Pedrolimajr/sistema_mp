@@ -1,0 +1,124 @@
+/* SaidaProduto.css */
+
+.saida-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa;
+  
+}
+
+.saida-container h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #343a40;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: black;
+  font-weight: bold;
+}
+
+.product-select,
+.quantity-input,
+.unidade-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px; /* Espaço entre os campos ajustado */
+  border: 1px solid #6c757d;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #343a40;
+  
+}
+.product-select{
+  justify-content: space-between;
+}
+
+.product-select::placeholder,
+.quantity-input::placeholder {
+  color: #8d959d;
+}
+
+.product-select:focus,
+.quantity-input:focus,
+.unidade-select:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #003d80;
+}
+
+.cadastro-form {
+  margin-bottom: 80px;
+  width: 500px;
+  text-align: left;
+}
+
+.cadastro-input {
+  color: #343a40;
+}
+
+.cadastro-input::placeholder {
+  color: #8d959d;
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .saida-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .cadastro-form {
+    width: 100%;
+  }
+
+  .product-select,
+  .quantity-input,
+  .unidade-select,
+  .submit-button {
+    padding: 10px;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .saida-container h2 {
+    font-size: 20px;
+  }
+
+  .cadastro-form {
+    margin-bottom: 40px;
+  }
+
+  .submit-button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+}

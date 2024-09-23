@@ -1,0 +1,182 @@
+/* CadastroProduto.css */
+
+.cadastro-container {
+  background-color: #f8f9fa; /* Fundo claro */
+  color: #343a40; /* Texto escuro */
+  padding: 0px;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px; /* Ajuste da margem superior */
+}
+
+.cadastro-container h2 {
+  margin-bottom: 15px; /* Reduzido para aproximar o título do formulário */
+  font-size: 25px;
+  color: #343a40; /* Cor escura para o título */
+  text-transform: uppercase;
+}
+
+.cadastro-form {
+  background-color: rgba(105, 103, 103, 0.9); /* Fundo quase branco */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+}
+
+.cadastro-input {
+  padding: 10px;
+  border: 1px solid #6c757d; /* Borda cinza */
+  border-radius: 5px;
+  background-color: #ffffff; /* Fundo branco */
+  color: #343a40; /* Texto escuro */
+}
+
+.cadastro-input:focus {
+  outline: none;
+  border: 2px solid #0056b3; /* Azul ao focar */
+}
+
+.error {
+  color: red; /* Erro em vermelho */
+  font-size: 0.8rem;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.cadastro-button {
+  background-color: #0056b3; /* Azul para o botão */
+  color: white; /* Texto branco */
+  border: none;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.cadastro-button:hover {
+  background-color: #003d80; /* Azul escuro ao passar o mouse */
+  transform: scale(1.05);
+}
+
+/* Estilização da quantidade e unidade (Un, Cx, Lt) */
+
+.quantidade-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.quantidade-input {
+  display: flex;
+  align-items: center;
+}
+
+.quantidade-input input {
+  width: 60px; /* Tamanho ajustado do campo de quantidade */
+  padding: 10px;
+  border: 1px solid #6c757d; /* Borda cinza */
+  background-color: #ffffff; /* Fundo branco */
+  color: #343a40; /* Texto escuro */
+  text-align: center; /* Centraliza o texto dentro do input */
+  border-radius: 5px;
+}
+
+.quantidade-input input:focus {
+  outline: none;
+  border: 2px solid #0056b3; /* Azul ao focar */
+}
+
+.unidade-select {
+  width: 100px; /* Tamanho fixo para o campo de seleção */
+  padding: 10px;
+  border: 1px solid #6c757d; /* Borda cinza */
+  background-color: #ffffff; /* Fundo branco */
+  color: #343a40; /* Texto escuro */
+  border-radius: 5px;
+  text-align: center;
+}
+
+.unidade-select:focus {
+  outline: none;
+  border: 2px solid #0056b3; /* Azul ao focar */
+}
+
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .cadastro-container {
+      padding: 20px; /* Adiciona padding para dispositivos menores */
+      height: auto; /* Permite que a altura se ajuste ao conteúdo */
+      
+  }
+
+  .cadastro-form {
+      width: 90%; /* Aumenta a largura do formulário */
+      position: absolute;
+      
+  }
+
+  .cadastro-input,
+  .quantidade-input input,
+  .unidade-select {
+      width: 100%; /* Torna os campos responsivos */
+      max-width: 100%; /* Garante que não excedam a largura do container */
+  }
+}
+
+
+/*Responsividade para tablet 800 */
+@media (width: 800px) {
+  .cadastro-container {
+      padding: 20px; /* Adiciona padding para dispositivos menores */
+      height: auto; /* Permite que a altura se ajuste ao conteúdo */
+      
+  }
+
+  .cadastro-form {
+      width: 90%; /* Aumenta a largura do formulário */
+      position: absolute;
+      top: 580px;
+      
+  }
+
+  .cadastro-input,
+  .quantidade-input input,
+  .unidade-select {
+      width: 95%; /* Torna os campos responsivos */
+      max-width: 100%; /* Garante que não excedam a largura do container */
+  }
+}
+
+
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .cadastro-container h2 {
+      font-size: 22px; /* Reduz o tamanho da fonte do título */
+  }
+
+  .cadastro-button {
+      width: 100%; /* Faz o botão ocupar toda a largura disponível */
+      padding: 10px; /* Ajusta o padding do botão */
+  }
+
+  .quantidade-container {
+      flex-direction: column; /* Alinha a quantidade e unidade em coluna */
+      align-items: flex-start; /* Alinha os itens à esquerda */
+  }
+
+  .quantidade-input {
+      width: 100%; /* Torna a quantidade responsiva */
+  }
+}

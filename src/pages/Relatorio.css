@@ -1,0 +1,114 @@
+/* Relatorio.css */
+
+.relatorio-container {
+  background-color: #f8f9fa; /* Fundo claro */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+ text-align: center;
+}
+
+h1 {
+  color: #343a40; /* Cor escura */
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th {
+  background-color: #343a40; /* Cor escura */
+  color: white; /* Amarelo */
+  padding: 10px;
+}
+
+td {
+  background-color: #ffffff; /* Branco */
+  color: #343a40; /* Texto escuro */
+  padding: 10px;
+  border: 1px solid #6c757d; /* Borda cinza */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Cor de destaque ao passar o mouse */
+}
+
+.error-message {
+  color: red; /* Cor para mensagens de erro */
+  margin-bottom: 10px;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Azul */
+  color: white; /* Texto branco */
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0px 2px 2px  black;
+ 
+  
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Azul escuro ao passar o mouse */
+}
+
+.titulo-relatorio {
+  text-align: center; /* Centraliza o texto */
+  color: #343a40; /* Cor escura */
+  margin-bottom: 20px;
+}
+
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .titulo-relatorio {
+      font-size: 24px; /* Reduz o tamanho do título */
+  }
+
+  .relatorio-container {
+      padding: 15px; /* Reduz o padding do container */
+  }
+
+  table {
+      font-size: 0.9em; /* Reduz o tamanho da fonte da tabela */
+  }
+
+  th, td {
+      padding: 8px; /* Ajusta o padding das células */
+  }
+
+  .delete-button {
+      padding: 8px 12px; /* Ajusta o padding do botão de deletar */
+      font-size: 0.8em; /* Reduz o tamanho da fonte do botão */
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .titulo-relatorio {
+      font-size: 20px; /* Reduz ainda mais o tamanho do título */
+  }
+
+  .relatorio-container {
+      padding: 10px; /* Reduz o padding do container */
+  }
+
+  table {
+      font-size: 0.8em; /* Reduz o tamanho da fonte da tabela */
+  }
+
+  th, td {
+      padding: 6px; /* Ajusta o padding das células */
+  }
+
+  .delete-button {
+      padding: 6px 10px; /* Ajusta o padding do botão de deletar */
+      font-size: 0.7em; /* Reduz o tamanho da fonte do botão */
+  }
+}

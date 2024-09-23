@@ -1,0 +1,127 @@
+/* EntradaProduto.css */
+
+.entrada-container {
+  max-width: 800px; /* Aumentando a largura máxima */
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa; /* Fundo claro */
+}
+
+.entrada-container h2 {
+  font-size: 24px;
+  margin-bottom: 15px; /* Diminuindo o espaço abaixo do título */
+  color: #343a40; /* Cor escura para o título */
+  text-align: center;
+}
+
+label {
+  display: block; /* Faz o rótulo ocupar a linha inteira */
+  margin-bottom: 5px; /* Espaço abaixo do rótulo */
+  color: black; /* Cor escura para o texto dos rótulos */
+  font-weight: bold; /* Negrito para destaque */
+}
+
+.product-select,
+.quantity-input,
+.unidade-select { /* Adicionando a classe do select de unidade */
+  width: 100%; /* Mantendo a largura total */
+  padding: 8px; /* Diminuindo o padding para compactar a altura */
+  margin: 8px 0; /* Diminuindo o espaço entre os campos */
+  border: 1px solid #6c757d; /* Borda cinza */
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #ffffff; /* Fundo branco */
+  color: #343a40; /* Texto escuro */
+}
+
+.product-select::placeholder,
+.quantity-input::placeholder { /* Estilização do placeholder */
+  color: #8d959d; /* Cor do placeholder */
+  opacity: 1; /* Para garantir que o placeholder seja visível */
+}
+
+.product-select:focus,
+.quantity-input:focus,
+.unidade-select:focus { /* Adicionando foco ao select de unidade */
+  border-color: #0056b3; /* Cor da borda ao focar */
+  outline: none;
+}
+
+.submit-button {
+  width: 100%; /* Mantendo a largura total */
+  padding: 10px;
+  background-color: #0056b3; /* Azul para o botão */
+  color: white; /* Texto branco */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #003d80; /* Azul escuro ao passar o mouse */
+}
+
+.cadastro-form {
+  margin-bottom: 80px;
+  width: 500px;
+  text-align: left;
+}
+
+.cadastro-input {
+  color: #343a40;
+}
+
+.cadastro-input::placeholder {
+  color: #8d959d;
+}
+
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .entrada-container {
+      width: 90%; /* Aumenta a largura do container */
+      padding: 15px; /* Ajusta o padding */
+  }
+
+  .cadastro-form {
+      width: 100%; /* Faz o formulário ocupar toda a largura disponível */
+  }
+
+  .product-select,
+  .quantity-input,
+  .unidade-select,
+  .submit-button {
+      padding: 10px; /* Aumenta o padding para melhor usabilidade */
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .entrada-container h2 {
+      font-size: 20px; /* Reduz o tamanho da fonte do título */
+  }
+
+  .cadastro-form {
+      margin-bottom: 40px; /* Reduz o espaço inferior */
+  }
+
+  .submit-button {
+      padding: 12px; /* Aumenta o padding do botão */
+      font-size: 14px; /* Reduz o tamanho da fonte do botão */
+  }
+
+  label {
+      font-size: 14px; /* Ajusta o tamanho da fonte dos rótulos */
+  }
+}
+
+
+
+
+/*APLICAR ESSAS ABAIXO DEPOIS QUE APLICAR AS CLASSES NO ENTRADAPRODUTOJ.SX*/
+

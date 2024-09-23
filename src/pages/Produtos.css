@@ -1,0 +1,185 @@
+/* Produtos.css */
+
+.produtos-container {
+  background-color: #f8f9fa; /* Fundo claro */
+  color: #343a40; /* Texto escuro */
+  padding: 40px;
+  text-align: center;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.produtos-container h2 {
+  margin-bottom: 20px;
+  font-size: 2.5em; /* Tamanho da fonte do título */
+  color: #3f3440; /* Azul profissional */
+  background: none;
+  /* 
+  font-size:40px;
+  color: black;
+ text-transform: uppercase;
+  */
+ 
+}
+
+.produtos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 8px; /* Borda arredondada */
+  overflow: hidden; /* Evita que as bordas sejam cortadas */
+}
+
+.produtos-table th,
+.produtos-table td {
+  padding: 10px;
+  border: 1px solid #6c757d; /* Borda cinza */
+  text-align: center; /* Centraliza o texto */
+  /*text-align: left;  Alinhamento à esquerda */
+  
+}
+
+.produtos-table th {
+  background-color: #343a40; /* Azul escuro para o cabeçalho */
+  color: white; /* Texto branco no cabeçalho */
+}
+
+.produtos-table tr:nth-child(even) {
+  background-color: #f9f9f9; /* Cinza claro para linhas pares */
+}
+
+.produtos-table tr:hover {
+  background-color: rgba(0, 86, 179, 0.1); /* Azul claro ao passar o mouse */
+}
+
+.remove-button {
+  background-color: #dc3545; /* Vermelho padrão */
+  color: white;
+  border: none;
+  padding: 10px 15px; /* Ajuste do padding */
+  cursor: pointer;
+  border-radius: 4px; /* Borda arredondada */
+  transition: background-color 0.3s, transform 0.3s; /* Efeito de transição */
+  font-size: 0.9em; /* Tamanho da fonte */
+  box-shadow: 0px 2px 2px  black;
+}
+
+.remove-button:hover {
+  background-color: #c82333; /* Vermelho escuro ao passar o mouse */
+ transform: translateY(-2px);
+ /* transform: scale(1.05); Aumenta o botão ao passar o mouse */
+}
+
+/* INPUT DE PESQUISA */
+
+.pesquisa-input {
+  width: 200px; /* Tamanho reduzido do campo de pesquisa */
+  padding: 8px; /* Ajuste do padding */
+  margin-bottom: 20px;
+  border: 1px solid #343a40; /* Borda leve */
+  border-radius: 4px;
+  font-size: 14px; /* Tamanho da fonte reduzido */
+  cursor: pointer;
+  background: #343a40;
+  color: black;
+}
+
+.pesquisa-container {
+  display: flex;
+  justify-content: flex-end; /* Alinha o campo à direita */
+  margin-bottom: 20px; /* Espaço entre o campo e a tabela */
+ 
+}
+
+.pesquisa-input:focus {
+  border-color: #0056b3; /* Cor da borda ao focar */
+  outline: none;
+  
+}
+
+.search-icon {
+  width: 25px; /* Ajuste o tamanho do ícone */
+  height: 25px; /* Ajuste o tamanho do ícone */
+  margin-right: 8px; /* Espaço entre o ícone e o input */
+  /* filter: invert(100%); Inverte as cores, tornando preto em branco */
+}
+
+
+/* Adicione este CSS ao seu arquivo Produtos.css*/
+.sugestoes-container {
+  position: absolute; /*Para que as sugestões apareçam abaixo do campo de pesquisa*/
+  background-color: white; /*Fundo branco para a lista de sugestões*/
+  border: 1px solid #ccc; /* Borda para delimitar a área das sugestões*/
+  z-index: 1000; /*Para que fique acima de outros elementos*/
+  max-height: 30px; /*Limita a altura da lista*/
+  overflow-y: auto; /*Adiciona rolagem se necessário*/
+  width: 175px; /*Largura da lista para alinhar com o input*/
+  margin-top: -35px;
+  list-style-type: none; /* Remove os marcadores padrão da lista */
+  
+}
+
+.sugestoes-container li {
+  padding: 10px; /*Espaçamento interno*/
+  cursor: pointer; /* Mão ao passar o mouse*/
+}
+
+.sugestoes-container li:hover {
+  background-color: #f0f0f0; /* Destaque ao passar o mouse */
+}
+
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .produtos-container {
+      padding: 20px; /* Reduz o padding do container */
+  }
+
+  .produtos-container h2 {
+      font-size: 2em; /* Reduz o tamanho do título */
+  }
+
+  .produtos-table th,
+  .produtos-table td {
+      padding: 8px; /* Ajusta o padding das células */
+  }
+
+  .remove-button {
+      padding: 8px 12px; /* Ajusta o padding do botão de remover */
+      font-size: 0.8em; /* Reduz o tamanho da fonte do botão */
+  }
+
+  .pesquisa-input {
+      width: 100%; /* Ajusta a largura do campo de pesquisa para 100% */
+      margin-bottom: 10px; /* Reduz o espaço abaixo do campo de pesquisa */
+  }
+
+  .pesquisa-container {
+      justify-content: center; /* Centraliza o campo de pesquisa */
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .produtos-container {
+      padding: 10px; /* Reduz o padding do container */
+  }
+
+  .produtos-container h2 {
+      font-size: 1.5em; /* Reduz ainda mais o tamanho do título */
+  }
+
+  .produtos-table th,
+  .produtos-table td {
+      padding: 6px; /* Ajusta o padding das células */
+  }
+
+  .remove-button {
+      padding: 6px 10px; /* Ajusta o padding do botão de remover */
+      font-size: 0.7em; /* Reduz o tamanho da fonte do botão */
+  }
+
+  .pesquisa-input {
+      width: 100%; /* Mantém a largura do campo de pesquisa em 100% */
+  }
+}

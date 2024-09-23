@@ -1,0 +1,218 @@
+/* Estilo para html e body */
+html, body {
+  height: 100%; /* Garante que o HTML e o body ocupem toda a altura da tela */
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Poppins', sans-serif; /* Fonte moderna e elegante */
+ 
+}
+
+/* Estilo do corpo com fundo escuro */
+body.login-background {
+  background-color: #333; /* Cor de fundo escura */
+  color: white; /* Cor do texto */
+}
+
+/* Estilo do contêiner do login */
+.login-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 100vh; /* Ajusta a altura do contêiner */
+  width: 100%; /* Largura total */
+}
+
+/* Estilo do título do formulário */
+.form-title {
+  font-size: 3rem; /* Tamanho da fonte do título */
+  font-weight: 600; /* Peso da fonte */
+  margin-bottom: 25px; /* Espaço abaixo do título */
+  color: #ffffff; /* Cor do título */
+  text-transform: uppercase; /* Transforma o texto em maiúsculas */
+  letter-spacing: 2px; /* Aumenta o espaçamento entre letras */
+}
+
+/* Estilo do formulário de login */
+.login-form {
+  padding: 40px;
+  border-radius: 12px; /* Bordas arredondadas */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Sombra mais suave */
+  display: flex;
+  flex-direction: column; /* Alinha os itens em coluna */
+  gap: 20px; /* Espaço entre os itens do formulário */
+  width: 100%; /* Largura total */
+  max-width: 400px; /* Largura máxima do formulário */
+  background: linear-gradient(135deg, #1f1f1f, #292929); /* Fundo com gradiente sutil */
+  animation: glow 3s infinite alternate; /* Efeito de brilho suave */
+  position: relative; /* Permite posicionar elementos internos */
+}
+
+/* Estilo da logo */
+.logo {
+  width: 130px; /* Largura da logo */
+  height: auto; /* Altura automática */
+  position: absolute; /* Posiciona a logo dentro do formulário */
+  top: 20px; /* Distância do topo */
+  right: 20px; /* Distância da direita */
+}
+
+/* Efeito de escala ao passar o mouse sobre o formulário */
+.login-form:hover {
+  transform: scale(1.02); /* Aumento leve ao passar o mouse */
+}
+
+/* Estilo dos rótulos */
+.login-form label {
+  color: #ffffff; /* Cor dos rótulos */
+  font-size: 1.1rem; /* Tamanho da fonte dos rótulos */
+  text-align: left; /* Alinhamento à esquerda */
+}
+
+/* Estilo dos campos de entrada */
+input {
+  padding: 12px; /* Espaço interno nos campos */
+  border: none; /* Remove a borda padrão */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-size: 1rem; /* Tamanho da fonte */
+  background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+  color: #ffffff; /* Cor do texto nos campos */
+  transition: background-color 0.3s; /* Transição suave ao focar */
+}
+
+/* Estilo do placeholder */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Cor do placeholder */
+}
+
+/* Estilo ao focar nos campos de entrada */
+input:focus {
+  outline: none; /* Remove o contorno padrão */
+  background-color: rgba(255, 255, 255, 0.3); /* Fundo mais claro ao focar */
+  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.6); /* Realce azul ao focar */
+}
+
+/* Estilo do botão de login */
+.login-button {
+  background-color: #FFC900; /* Cor de fundo do botão */
+  color: black; /* Cor do texto */
+  font-weight: bold; /* Negrito */
+  border: none; /* Remove a borda padrão */
+  padding: 15px 30px; /* Espaço interno do botão */
+  font-size: 1.3rem; /* Tamanho da fonte */
+  cursor: pointer; /* Cursor de ponteiro */
+  border-radius: 8px; /* Bordas arredondadas */
+  transition: background-color 0.3s, transform 0.2s; /* Transição suave */
+}
+
+/* Efeito de hover no botão */
+.login-button:hover {
+  background-color: #ba9b20; /* Azul mais escuro ao passar o mouse */
+  color:white;
+  transform: translateY(-3px); /* Leve elevação ao passar o mouse */
+}
+
+/* Animação de brilho */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #e6d661, 0 0 10px #e6d661, 0 0 15px #e6d661; /* Brilho inicial */
+  }
+  100% {
+    box-shadow: 0 0 20px #FFC900, 0 0 30px #FFC900, 0 0 40px #FFC900; /* Brilho final */
+  }
+}
+
+/* Estilo do rodapé */
+.footer {
+  margin-top: 20px; /* Espaço acima do rodapé */
+  text-align: center; /* Centraliza o texto */
+  position: absolute; /* Fixa o rodapé */
+  bottom: 0; /* Coloca o rodapé na parte inferior da página */
+  width: 100%; /* Faz o rodapé ocupar toda a largura */
+  padding: 10px 0; /* Espaço interno */
+}
+
+/* Estilo do nome da empresa no rodapé */
+.company-name {
+  font-size: 1.2rem; /* Tamanho da fonte do copyright */
+  color: white; /* Cor do texto */
+  margin-bottom: -25px; /* Margem negativa para ajuste */
+}
+
+
+
+/* Responsividade para tablets */
+/* @media (max-width: 768px) {
+  .form-title {
+    font-size: 2.5rem;
+  }
+
+  .login-form {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .login-button {
+    font-size: 1.2rem;
+  }
+} */
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 2rem;
+    
+  }
+
+  .login-button {
+    font-size: 1rem;
+  }
+
+  .login-form {
+    padding: 25px;
+    max-width: 100%;
+  }
+
+  input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+  .form-title {
+    font-size: 2.5rem;
+  }
+
+  .login-form {
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  .login-button {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 2rem;
+  }
+
+  .login-button {
+    font-size: 1rem;
+    padding: 12px 20px; /* Ajusta o padding para botões menores */
+  }
+
+  .login-form {
+    padding: 20px;
+    max-width: 95%; /* Aumenta a largura máxima para celular */
+  }
+
+  input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}

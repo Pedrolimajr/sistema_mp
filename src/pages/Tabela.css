@@ -1,0 +1,186 @@
+/* Tabela.css */
+
+body {
+    font-family: 'Arial', sans-serif; /* Fonte padrão */
+    background-color: #e9ecef; /* Fundo da página */
+    margin: 0;
+    padding: 20px; /* Espaçamento da página */
+}
+
+.tabela-container {
+    background-color: #f8f9fa; /* Fundo claro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    margin-bottom: 20px; /* Espaçamento entre tabelas */
+    text-align: center;
+}
+
+input {
+    width: calc(100% - 16px); /* Ajusta a largura */
+    padding: 10px; /* Aumenta o padding */
+    border: 1px solid #6c757d; /* Borda cinza */
+    border-radius: 4px;
+    background-color: #ffffff; /* Fundo branco */
+    color: #343a40; /* Texto escuro */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transição suave */
+}
+
+input:focus {
+    border-color: #007bff; /* Azul ao focar */
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra ao focar */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Borda arredondada */
+    overflow: hidden; /* Evita bordas cortadas */
+}
+
+th {
+    background-color: #343a40; /* Cor escura */
+    color: white; /* Texto branco */
+    padding: 10px;
+    text-align: center; /* Centraliza */
+}
+th input{
+    background-color: #343a40;
+    color: white;
+}
+
+td {
+    background-color: #ffffff; /* Branco */
+    color: #343a40; /* Texto escuro */
+    padding: 10px;
+    border: 1px solid #6c757d; /* Borda cinza */
+    transition: background-color 0.3s; /* Transição suave ao passar o mouse */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Cor de destaque ao passar o mouse */
+}
+
+button {
+    background-color: #007bff; /* Azul */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito de transição */
+    font-size: 0.9em; /* Tamanho da fonte */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra para os botões */
+}
+
+button:hover {
+    background-color: #003d80; /* Azul escuro ao passar o mouse */
+    transform: translateY(-2px); /* Levanta o botão */
+}
+
+button:focus {
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Botões de Adicionar e Excluir */
+.btn-adicionar-tabela,
+.btn-adicionar-produto,
+.btn-excluir {
+    margin-top: 10px; /* Espaçamento acima do botão */
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.2); /* Sombra leve */
+}
+
+.btn-adicionar-tabela {
+    background-color: #0056b3; /* Azul para o botão Adicionar Tabela */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 15px; /* Espaçamento interno */
+    font-weight: bold; /* Negrito */
+}
+
+.btn-adicionar-tabela:hover {
+    background-color: #003d80; /* Azul escuro ao passar o mouse */
+}
+
+.btn-adicionar-produto {
+    background-color: #28a745; /* Verde */
+}
+
+.btn-adicionar-produto:hover {
+    background-color: #218838; /* Verde escuro ao passar o mouse */
+}
+
+.btn-excluir {
+    background-color: #dc3545; /* Vermelho para o botão Excluir */
+    box-shadow: 0px 2px 2px  black;
+}
+
+.btn-excluir:hover {
+    background-color: #c82333; /* Vermelho escuro ao passar o mouse */
+}
+
+.titulo-tabela {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+}
+
+
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .titulo-tabela {
+        font-size: 24px; /* Reduz o tamanho do título */
+    }
+
+    .tabela-container {
+        padding: 15px; /* Reduz o padding do container */
+    }
+
+    input {
+        padding: 8px; /* Ajusta o padding dos inputs */
+    }
+
+    button {
+        font-size: 0.8em; /* Reduz o tamanho da fonte dos botões */
+        padding: 8px 12px; /* Ajusta o padding dos botões */
+    }
+
+    table {
+        font-size: 0.9em; /* Reduz o tamanho da fonte da tabela */
+    }
+
+    th, td {
+        padding: 8px; /* Ajusta o padding das células */
+    }
+}
+
+/* Responsividade para celulares */
+@media (max-width: 480px) {
+    .titulo-tabela {
+        font-size: 20px; /* Reduz ainda mais o tamanho do título */
+    }
+
+    .tabela-container {
+        padding: 10px; /* Reduz o padding do container */
+    }
+
+    input {
+        padding: 6px; /* Ajusta o padding dos inputs */
+    }
+
+    button {
+        font-size: 0.7em; /* Reduz o tamanho da fonte dos botões */
+        padding: 6px 10px; /* Ajusta o padding dos botões */
+    }
+
+    table {
+        font-size: 0.8em; /* Reduz o tamanho da fonte da tabela */
+    }
+
+    th, td {
+        padding: 6px; /* Ajusta o padding das células */
+    }
+}
