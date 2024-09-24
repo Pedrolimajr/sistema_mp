@@ -5,20 +5,24 @@ import './Relatorio.css'; // Importando o CSS
 const Relatorio = () => {
   const [movimentacoes, setMovimentacoes] = useState([]);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true); // Estado de carregamento
 
   const fetchMovimentacoes = async () => {
+    setLoading(true); // Começar o carregamento
     try {
       const response = await axios.get(`${process.env.REACT_APP_API_URL}/produtos/movimentacoes`); // Usando variável de ambiente
       setMovimentacoes(response.data);
     } catch (err) {
       setError(`Erro ao buscar movimentações: ${err.response ? err.response.data : err.message}`);
+    } finally {
+      setLoading(false); // Terminar o carregamento
     }
   };
 
   const handleDelete = async (id) => {
     try {
       await axios.delete(`${process.env.REACT_APP_API_URL}/movimentacoes/${id}`); // Usando variável de ambiente
-      setMovimentacoes(movimentacoes.filter(mov => mov._id !== id));
+      fetchMovimentacoes(); // Atualizar a lista após exclusão
     } catch (err) {
       setError(`Erro ao excluir movimentação: ${err.response ? err.response.data : err.message}`);
     }
@@ -28,42 +32,132 @@ const Relatorio = () => {
     fetchMovimentacoes();
   }, []);
 
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleString(); // Função para formatar a data
+  };
+
   return (
     <div className="relatorio-container">
       <h1 className="titulo-relatorio">Relatórios de Movimentações</h1>
 
       {error && <div className="error-message">{error}</div>}
-      <table>
-        <thead>
-          <tr>
-            <th>ID do Produto</th>
-            <th>Nome do Produto</th>
-            <th>Tipo</th>
-            <th>Quantidade</th>
-            <th>Data</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {movimentacoes.map((mov) => (
-            <tr key={mov._id}>
-              <td>{mov.produtoId ? mov.produtoId._id : 'N/A'}</td>
-              <td>{mov.produtoId ? mov.produtoId.nome : 'N/A'}</td>
-              <td>{mov.tipo}</td>
-              <td>{mov.quantidade}</td>
-              <td>{new Date(mov.data).toLocaleString()}</td>
-              <td>
-                <button className="delete-button" onClick={() => handleDelete(mov._id)}>Excluir</button>
-              </td>
+      {loading ? ( // Exibir mensagem de carregamento
+        <p>Carregando movimentações...</p>
+      ) : (
+        <table>
+          <thead>
+            <tr>
+              <th>ID do Produto</th>
+              <th>Nome do Produto</th>
+              <th>Tipo</th>
+              <th>Quantidade</th>
+              <th>Data</th>
+              <th>Ações</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {movimentacoes.map((mov) => (
+              <tr key={mov._id}>
+                <td>{mov.produtoId ? mov.produtoId._id : 'N/A'}</td>
+                <td>{mov.produtoId ? mov.produtoId.nome : 'N/A'}</td>
+                <td>{mov.tipo}</td>
+                <td>{mov.quantidade}</td>
+                <td>{formatDate(mov.data)}</td>
+                <td>
+                  <button className="delete-button" onClick={() => handleDelete(mov._id)}>Excluir</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
 
 export default Relatorio;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useEffect, useState } from 'react';
+// import axios from 'axios';
+// import './Relatorio.css'; // Importando o CSS
+
+// const Relatorio = () => {
+//   const [movimentacoes, setMovimentacoes] = useState([]);
+//   const [error, setError] = useState('');
+
+//   const fetchMovimentacoes = async () => {
+//     try {
+//       const response = await axios.get(`${process.env.REACT_APP_API_URL}/produtos/movimentacoes`); // Usando variável de ambiente
+//       setMovimentacoes(response.data);
+//     } catch (err) {
+//       setError(`Erro ao buscar movimentações: ${err.response ? err.response.data : err.message}`);
+//     }
+//   };
+
+//   const handleDelete = async (id) => {
+//     try {
+//       await axios.delete(`${process.env.REACT_APP_API_URL}/movimentacoes/${id}`); // Usando variável de ambiente
+//       setMovimentacoes(movimentacoes.filter(mov => mov._id !== id));
+//     } catch (err) {
+//       setError(`Erro ao excluir movimentação: ${err.response ? err.response.data : err.message}`);
+//     }
+//   };
+
+//   useEffect(() => {
+//     fetchMovimentacoes();
+//   }, []);
+
+//   return (
+//     <div className="relatorio-container">
+//       <h1 className="titulo-relatorio">Relatórios de Movimentações</h1>
+
+//       {error && <div className="error-message">{error}</div>}
+//       <table>
+//         <thead>
+//           <tr>
+//             <th>ID do Produto</th>
+//             <th>Nome do Produto</th>
+//             <th>Tipo</th>
+//             <th>Quantidade</th>
+//             <th>Data</th>
+//             <th>Ações</th>
+//           </tr>
+//         </thead>
+//         <tbody>
+//           {movimentacoes.map((mov) => (
+//             <tr key={mov._id}>
+//               <td>{mov.produtoId ? mov.produtoId._id : 'N/A'}</td>
+//               <td>{mov.produtoId ? mov.produtoId.nome : 'N/A'}</td>
+//               <td>{mov.tipo}</td>
+//               <td>{mov.quantidade}</td>
+//               <td>{new Date(mov.data).toLocaleString()}</td>
+//               <td>
+//                 <button className="delete-button" onClick={() => handleDelete(mov._id)}>Excluir</button>
+//               </td>
+//             </tr>
+//           ))}
+//         </tbody>
+//       </table>
+//     </div>
+//   );
+// };
+
+// export default Relatorio;
 
 
 
