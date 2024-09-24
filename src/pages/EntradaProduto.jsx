@@ -3,6 +3,10 @@ import axios from 'axios';
 import './EntradaProduto.css';
 import { toast } from 'react-toastify';
 
+
+
+
+
 const EntradaProduto = () => {
   const [produtos, setProdutos] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -101,6 +105,7 @@ const EntradaProduto = () => {
         className="quantity-input"
       />
       <button onClick={handleEntrada} className="submit-button">Registrar Entrada</button>
+      
     </div>
   );
 };
